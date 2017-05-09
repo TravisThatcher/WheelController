@@ -56,7 +56,7 @@ int pot1Raw = 0;
 int pot2Raw = 0;
 int pot3Raw = 0;
 
-int index=0;
+int idx=0;
 int readings0[numReadings];
 int readings1[numReadings];
 int readingsP0[numReadings];
@@ -197,32 +197,32 @@ void loop() {
   
   
   // average the readings!
-  wheel0Total = wheel0Total - readings0[index];
-  wheel1Total = wheel1Total - readings1[index];
-  pot0Total = pot0Total - readingsP0[index];
-  pot1Total = pot1Total - readingsP1[index];
-  pot2Total = pot2Total - readingsP2[index];
-  pot3Total = pot3Total - readingsP3[index];
+  wheel0Total = wheel0Total - readings0[idx];
+  wheel1Total = wheel1Total - readings1[idx];
+  pot0Total = pot0Total - readingsP0[idx];
+  pot1Total = pot1Total - readingsP1[idx];
+  pot2Total = pot2Total - readingsP2[idx];
+  pot3Total = pot3Total - readingsP3[idx];
   
-  readings0[index] = analogRead(WHEEL1);
-  readings1[index] = analogRead(WHEEL2);
-  readingsP0[index] = analogRead(POT0);
-  readingsP1[index] = analogRead(POT1);
-  readingsP2[index] = analogRead(POT2);
-  readingsP3[index] = analogRead(POT3);
+  readings0[idx] = analogRead(WHEEL1);
+  readings1[idx] = analogRead(WHEEL2);
+  readingsP0[idx] = analogRead(POT0);
+  readingsP1[idx] = analogRead(POT1);
+  readingsP2[idx] = analogRead(POT2);
+  readingsP3[idx] = analogRead(POT3);
 if(test==true){
-  Serial.println(readings0[index]);
+  Serial.println(readings0[idx]);
 }
-  wheel0Total = wheel0Total + readings0[index];
-  wheel1Total = wheel1Total + readings1[index];
-  pot0Total = pot0Total + readingsP0[index];
-  pot1Total = pot1Total + readingsP1[index];
-  pot2Total = pot2Total + readingsP2[index];
-  pot3Total = pot3Total + readingsP3[index];
-  index = index + 1;
+  wheel0Total = wheel0Total + readings0[idx];
+  wheel1Total = wheel1Total + readings1[idx];
+  pot0Total = pot0Total + readingsP0[idx];
+  pot1Total = pot1Total + readingsP1[idx];
+  pot2Total = pot2Total + readingsP2[idx];
+  pot3Total = pot3Total + readingsP3[idx];
+  idx = idx + 1;
   
-  if(index >= numReadings){
-    index=0;
+  if(idx >= numReadings){
+    idx=0;
   }
   
   wheel0Avg = wheel0Total / numReadings;

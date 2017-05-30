@@ -9,6 +9,9 @@
 #include <MIDI.h>
 #include "ControlPot.h"
 
+ // Created and binds the MIDI interface to the default hardware Serial port
+ MIDI_CREATE_DEFAULT_INSTANCE();
+
 /************** EDIT HERE ****************/
 
 // MIDI channel to send messages to
